@@ -1,0 +1,57 @@
+@reference "tailwindcss";
+
+@layer components {
+    :root {
+        --under-construction-primary: oklch(89.073% 0.18324 96.195);
+        --under-construction-secondary: oklch(20.5% 0 0);
+        --under-construction-animation-duration: 2s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        :root {
+            --under-construction-animation-duration: 8s;
+        }
+    }
+
+    @keyframes construction-stripes {
+        from {
+            -webkit-mask-position-x: 0;
+            mask-position-x: 0;
+        }
+        to {
+            -webkit-mask-position-x: 128px;
+            mask-position-x: 128px;
+        }
+    }
+
+    .construction-container {
+        @apply relative flex w-full cursor-default items-center justify-center gap-4 py-4 select-none;
+        background-color: var(--under-construction-primary);
+
+        &:hover {
+            .construction-label {
+                background-color: var(--under-construction-secondary);
+                color: var(--under-construction-primary);
+            }
+        }
+        .construction-bg-overlay {
+            @apply absolute inset-0 z-0;
+            background-color: var(--under-construction-secondary);
+            -webkit-mask-image: url("../../images/construction-pattern.svg");
+            mask-image: url("../../images/construction-pattern.svg");
+            background-repeat: repeat;
+            animation: construction-stripes var(--under-construction-animation-duration) linear infinite;
+        }
+
+        .construction-label {
+            @apply z-10 flex w-full items-center justify-center border-y-4 p-1 text-4xl uppercase transition-all duration-300 motion-reduce:duration-1000;
+            background-color: var(--under-construction-primary);
+            border-color: var(--under-construction-secondary);
+            color: var(--under-construction-secondary);
+        }
+
+        .construction-image {
+            @apply h-9 w-auto;
+        }
+    }
+}

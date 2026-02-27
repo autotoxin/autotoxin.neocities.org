@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import best800x600 from "../images/badges/best800x600.gif";
+import noFrames from "../images/badges/noframes5.gif";
+import validXHTML from "../images/badges/valid-xhtml10.gif";
+import validHTML5 from "../images/badges/valid-html5.gif";
+import madeWithMacOS from "../images/badges/made_with_macos.gif";
+import madeWithAstro from "../images/badges/made_with_astro.gif";
+---
+
+<div class="flex flex-row flex-wrap justify-center gap-1">
+    <Image src={best800x600} alt="This site is best at an 800x600 resolution" />
+    <Image src={noFrames} alt="This site has no frames" />
+    <div class="group relative">
+        <Image src={validXHTML} alt="This site has valid XHTML" class="" />
+        <Image
+            src={validHTML5}
+            alt="This site has valid HTML 5"
+            class="absolute top-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            title="Just kidding! Also the W3C validator thinks @layer isn't valid CSS (it is), so this badge is a lie."
+        />
+    </div>
+    <Image src={madeWithAstro} alt="This site was made using Astro" />
+    <Image src={madeWithMacOS} alt="This site was made with macOS" />
+</div>

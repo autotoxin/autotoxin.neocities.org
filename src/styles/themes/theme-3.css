@@ -1,0 +1,11 @@
+@import "../fonts/vt323.css";
+@import "../fonts/sixty-four.css";
+
+@theme {
+    --color-primary: oklch(72.068% 0.17774 40.591);
+    --color-secondary: oklch(35.521% 0.0409 238.691);
+    --color-accent: oklch(70.928% 0.10522 191.127);
+    --color-background: oklch(89.745% 0.03976 148.826);
+    --font-mono: "VT323", monospace;
+    --font-title: "Sixtyfour", monospace;
+}

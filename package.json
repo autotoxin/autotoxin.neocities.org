@@ -1,0 +1,28 @@
+{
+  "name": "my-websight",
+  "type": "module",
+  "version": "0.0.1",
+  "license": "ISC",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/pixelify-sans": "^5.2.7",
+    "@fontsource/sixtyfour": "^5.2.8",
+    "@fontsource/vt323": "^5.2.7",
+    "@gezellig/astro-simple-critical-css": "^0.1.0",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.17.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "three": "^0.183.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.183.1",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-organize-imports": "^4.3.0"
+  }
+}
