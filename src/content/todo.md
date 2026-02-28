@@ -1,0 +1,3 @@
+- [ ] flesh out index
+- [ ] add guestbook
+- [ ] write posts

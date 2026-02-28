@@ -1,0 +1,14 @@
+---
+import { cn } from "../utils/cn";
+
+interface Props {
+    title?: string;
+    class?: string;
+}
+
+const { title, class: className } = Astro.props;
+---
+
+<div class={cn("font-title text-primary cursor-default text-center text-3xl leading-none select-none", className)}>
+    {title || "Autotoxin"}
+</div>

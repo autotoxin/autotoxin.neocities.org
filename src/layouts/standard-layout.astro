@@ -1,0 +1,76 @@
+---
+// styles
+import "../styles/global.css";
+import "../styles/pages/index.css";
+
+// components
+import Badges from "../components/badges.astro";
+import SiteLogo from "../components/site-logo.astro";
+import Navigation from "../components/navigation.astro";
+import { Tooltips } from "astro-tooltips";
+
+interface Props {
+    frontmatter: {
+        title?: string;
+        siteTitle?: string;
+        description?: string;
+    };
+    children: unknown;
+}
+
+const { title, siteTitle = "autotoxin", description } = Astro.props.frontmatter;
+
+const menuItems = [
+    {
+        label: "Home",
+        href: "/",
+        isActive: Astro.url.pathname === "/",
+    },
+    {
+        label: "Blog",
+        href: "/blog",
+        isDisabled: true,
+        title: "Blog is coming soon!",
+    },
+];
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <title>{title ? `${title} - ${siteTitle}` : siteTitle}</title>
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content={siteTitle} />
+        <link rel="manifest" href="/site.webmanifest" />
+        <Tooltips interactive={false} delay={[15, 150]} />
+    </head>
+    <body>
+        <div class="background"></div>
+        <main class="relative flex min-h-screen w-full flex-col gap-4">
+            <header class="grid grid-cols-4 gap-4">
+                <slot name="header">
+                    <SiteLogo title={siteTitle} class="col-span-3" />
+                </slot>
+            </header>
+            <div class="grid flex-1 grid-cols-4 gap-4">
+                <div class="col-span-3 flex flex-col justify-start gap-4">
+                    <slot />
+                </div>
+                <slot name="navigation">
+                    <Navigation menuItems={menuItems} />
+                </slot>
+            </div>
+            <footer>
+                <slot name="footer">
+                    <Badges />
+                </slot>
+            </footer>
+        </main>
+    </body>
+</html>

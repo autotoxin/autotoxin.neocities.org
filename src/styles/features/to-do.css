@@ -1,0 +1,16 @@
+@reference "tailwindcss";
+@reference "../global.css";
+
+.to-do {
+    ul {
+        @apply divide-secondary divide-y divide-dashed leading-tight;
+
+        li {
+            @apply py-1;
+
+            strong {
+                @apply text-slate-900;
+            }
+        }
+    }
+}

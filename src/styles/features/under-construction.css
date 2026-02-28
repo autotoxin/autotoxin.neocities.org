@@ -32,6 +32,13 @@
             .construction-label {
                 background-color: var(--under-construction-secondary);
                 color: var(--under-construction-primary);
+
+                .text1 {
+                    @apply -translate-x-[200%];
+                }
+                .text2 {
+                    @apply translate-x-0;
+                }
             }
         }
         .construction-bg-overlay {
@@ -44,10 +51,17 @@
         }
 
         .construction-label {
-            @apply z-10 flex w-full items-center justify-center border-y-4 p-1 text-4xl uppercase transition-all duration-300 motion-reduce:duration-1000;
+            @apply relative z-10 flex h-1/3 w-full items-center justify-center overflow-hidden border-y-4 p-1 text-4xl uppercase transition-all duration-300 motion-reduce:duration-1000 motion-reduce:duration-4000;
             background-color: var(--under-construction-primary);
             border-color: var(--under-construction-secondary);
             color: var(--under-construction-secondary);
+
+            .text1 {
+                @apply absolute block transition-all motion-reduce:duration-4000;
+            }
+            .text2 {
+                @apply absolute block translate-x-[200%] transition-all motion-reduce:duration-4000;
+            }
         }
 
         .construction-image {

@@ -1,0 +1,28 @@
+---
+import Changelog from "../components/changelog.astro";
+import ToDo from "../components/to-do.astro";
+import UnderConstruction from "../components/under-construction.astro";
+import StandardLayout from "./standard-layout.astro";
+
+interface Props {
+    frontmatter: {
+        title?: string;
+        siteTitle?: string;
+        description?: string;
+    };
+    children: unknown;
+}
+
+const props = Astro.props;
+---
+
+<StandardLayout {...props}>
+    <article class="bg-background rounded-pixelated-8 p-5">
+        <slot />
+    </article>
+    <UnderConstruction class="rounded-pixelated-8 grow" />
+    <div class="grid grid-cols-3 gap-4">
+        <Changelog class="bg-background rounded-pixelated-6 col-span-2 px-5 py-3" />
+        <ToDo class="bg-background rounded-pixelated-6 px-5 py-3" />
+    </div>
+</StandardLayout>

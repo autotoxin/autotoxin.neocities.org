@@ -10,13 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.13",
     "@fontsource-variable/pixelify-sans": "^5.2.7",
     "@fontsource/sixtyfour": "^5.2.8",
     "@fontsource/vt323": "^5.2.7",
     "@gezellig/astro-simple-critical-css": "^0.1.0",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.17.1",
+    "astro-tooltips": "^0.6.2",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwind-merge": "^3.5.0",
     "three": "^0.183.1"
   },
   "devDependencies": {

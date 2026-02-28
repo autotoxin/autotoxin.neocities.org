@@ -1,0 +1,16 @@
+---
+import "../styles/features/changelog.css";
+import { Content } from "../content/changelog.md";
+import { cn } from "../utils/cn";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class={cn("changelog flex flex-col justify-start gap-1", className)}>
+    <h3 class="text-center text-xl leading-none">Changelog</h3>
+    <Content />
+</div>

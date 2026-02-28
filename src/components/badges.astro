@@ -1,25 +1,88 @@
 ---
+// styles
+import "../styles/features/badges-section.css";
+
+// components
 import { Image } from "astro:assets";
+
+// images
 import best800x600 from "../images/badges/best800x600.gif";
 import noFrames from "../images/badges/noframes5.gif";
 import validXHTML from "../images/badges/valid-xhtml10.gif";
 import validHTML5 from "../images/badges/valid-html5.gif";
 import madeWithMacOS from "../images/badges/made_with_macos.gif";
 import madeWithAstro from "../images/badges/made_with_astro.gif";
+import offlineVersion from "../images/badges/ver-offline.gif";
+import wikipedia from "../images/badges/wikipedia.gif";
+import iscLicense from "../images/badges/isc_license.gif";
 ---
 
-<div class="flex flex-row flex-wrap justify-center gap-1">
-    <Image src={best800x600} alt="This site is best at an 800x600 resolution" />
-    <Image src={noFrames} alt="This site has no frames" />
+<div class="badges-container" role="complementary">
+    <Image
+        src={best800x600}
+        alt="Badge that says '800×600 best', or maybe it says '800 × best 600', it's a bit hard to tell. It also has the word 'PIXEL' in all-caps written vertically on the left-hand side. To the right there's a cross with arros at the end that is animated to expand each loop"
+        title="Sorry for anyone with smaller screens I'll get around to responsiveness one day"
+        data-tooltip-placement="top"
+    />
+    <a
+        href="https://astro.build/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="I thought it'd be fun to make a neocities site with new technologies!"
+        data-tooltip-placement="top"
+    >
+        <Image src={madeWithAstro} alt="Badge with the Astro logo that says 'Made with Astro'" /></a
+    >
     <div class="group relative">
-        <Image src={validXHTML} alt="This site has valid XHTML" class="" />
+        <Image
+            src={validXHTML}
+            alt="Badge that says XHTML 1.0 and has the W3C logo to the left and a checkmark to the right. It's intended to communicate that this site has valid XHTML. This is a lie, and when the user hovers over this image it is replaced by the next image."
+        />
         <Image
             src={validHTML5}
-            alt="This site has valid HTML 5"
-            class="absolute top-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            alt="Badge that says HTML 5 and has the W3C logo to the left and a checkmark to the right. It's intended to communicate that this site has valid HTML 5. It's only a half-lie: the HTML is valid but the CSS isn't, because the W3C validator still doesn't understand @layer rules."
+            class="absolute top-0 opacity-0 transition-opacity duration-300 motion-reduce:duration-1500 group-hover:opacity-100"
             title="Just kidding! Also the W3C validator thinks @layer isn't valid CSS (it is), so this badge is a lie."
+            data-tooltip-placement="top"
         />
     </div>
-    <Image src={madeWithAstro} alt="This site was made using Astro" />
-    <Image src={madeWithMacOS} alt="This site was made with macOS" />
+    <a
+        href="https://github.com/autotoxin/autotoxin.neocities.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Click to download this site"
+        data-tooltip-placement="top"
+    >
+        <Image
+            src={offlineVersion}
+            alt="Badge that has a classic Windows compressed file icon and says 'Offline Version'."
+        />
+    </a>
+    <Image
+        src={madeWithMacOS}
+        alt="Badge that says 'Made with MacOS' and shows the MacOS logo on the left. The words fade in-and-out one by one."
+        title="...but I prefer working with Linux!"
+        data-tooltip-placement="top"
+    />
+    <a href="/LICENSE.txt" title="This site is licensed under the ISC License, click to read the license.">
+        <Image src={iscLicense} alt="Badge that says 'ISC License' with the logo of the ISC license on the left." />
+    </a>
+    <Image
+        src={noFrames}
+        alt="Badge that says 'This page is Frames Free' with a picture of a grid to the right of the text, and a red cross through it."
+        title="It's true but I gotta say when I see people using frames for site sections it really takes me back and makes me happy!"
+        data-tooltip-placement="top"
+    />
+    <a
+        href="https://donate.wikimedia.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="I'm dead serious you should donate to Wikipedia if you can afford to."
+        data-tooltip-placement="top"
+    >
+        <Image
+            src={wikipedia}
+            alt="Badge that says 'Support Wikipedia' and shows the old Wikipedia logo on the left."
+        />
+    </a>
 </div>

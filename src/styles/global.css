@@ -6,13 +6,31 @@
 }
 
 body {
-    @apply bg-accent relative bg-fixed bg-repeat-x font-mono text-slate-900;
+    @apply bg-accent relative bg-fixed bg-repeat-x font-mono text-slate-800;
 }
 
 .background {
-    @apply bg-secondary pointer-events-none absolute top-0 left-0 z-0 h-screen w-screen mask-[url('../images/mask.gif')];
+    @apply bg-secondary pointer-events-none absolute top-0 left-0 z-0 h-screen w-screen mask-[url('../images/mask.gif')] mask-contain;
 }
 
 main {
     @apply relative z-10 mx-auto min-h-150 w-200 p-6;
+}
+
+article {
+    h1 {
+        @apply text-2xl;
+    }
+    h2 {
+        @apply text-2xl;
+    }
+    h3 {
+        @apply text-xl;
+    }
+    h4 {
+        @apply text-lg;
+    }
+    h5 {
+        @apply text-base;
+    }
 }

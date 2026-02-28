@@ -1,0 +1,28 @@
+---
+export type NavItem = {
+    label: string;
+    href: string;
+    title?: string;
+    isActive?: boolean;
+    isDisabled?: boolean;
+    subItems?: NavItem[];
+};
+
+interface Props {
+    item: NavItem;
+}
+
+const { item } = Astro.props;
+---
+
+<li>
+    <a
+        href={item.href}
+        class={`side-menu-item transition-colors ${item.isDisabled ? "opacity-50 cursor-not-allowed" : "hover:text-primary"}`}
+        aria-disabled={item.isDisabled ? "true" : "false"}
+        title={item.title}
+    >
+        <span class={item.isActive ? "text-primary" : ""}>&gt; </span>
+        {item.label}
+    </a>
+</li>

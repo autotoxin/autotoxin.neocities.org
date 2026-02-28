@@ -1,11 +1,21 @@
 ---
 // styles
 import "../styles/features/under-construction.css";
+
+// utils
+import { cn } from "../utils/cn";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
 ---
 
-<section class="construction-container rounded-pixelated-2">
+<section class={cn("construction-container rounded-pixelated-2", className)}>
     <div class="construction-bg-overlay"></div>
     <div class="construction-label">
-        <h2>Under construction</h2>
+        <span class="text1">Under construction</span>
+        <span class="text2">Check back later!</span>
     </div>
 </section>

@@ -1,0 +1,2 @@
+- **0.1.1** Refactoring and initial content
+- **0.1.0** Initial setup and rough design
