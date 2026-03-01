@@ -10,7 +10,7 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<div class={cn("to-do flex flex-col justify-start gap-1", className)}>
-    <h3 class="text-center text-xl leading-none">To-do</h3>
-    <Content />
+<div class={cn("to-do flex flex-col justify-start gap-2", className)} role="marquee">
+    <h3 class="min-h-0 text-center text-xl leading-none">To-do</h3>
+    <div class="min-h-0 overflow-auto overscroll-y-contain"><Content /></div>
 </div>

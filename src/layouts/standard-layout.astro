@@ -32,6 +32,24 @@ const menuItems = [
         isDisabled: true,
         title: "Blog is coming soon!",
     },
+    {
+        label: "Accessibility",
+        href: "/accessibility",
+        isDisabled: true,
+        title: "Article coming soon!",
+    },
+    {
+        label: "Steal this site!",
+        href: "/copy",
+        isDisabled: true,
+        title: "Instructions coming soon!",
+    },
+    {
+        label: "Credits",
+        href: "/credits",
+        isDisabled: true,
+        title: "Credits coming soon!",
+    },
 ];
 ---
 
@@ -48,22 +66,22 @@ const menuItems = [
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content={siteTitle} />
         <link rel="manifest" href="/site.webmanifest" />
-        <Tooltips interactive={false} delay={[15, 150]} />
+        <Tooltips interactive={false} delay={[150, 150]} />
     </head>
     <body>
         <div class="background"></div>
-        <main class="relative flex min-h-screen w-full flex-col gap-4">
+        <main class="fixed flex w-full flex-col gap-4">
             <header class="grid grid-cols-4 gap-4">
                 <slot name="header">
                     <SiteLogo title={siteTitle} class="col-span-3" />
                 </slot>
             </header>
             <div class="grid flex-1 grid-cols-4 gap-4">
-                <div class="col-span-3 flex flex-col justify-start gap-4">
+                <div class="col-span-3 flex min-h-0 flex-col justify-start gap-4">
                     <slot />
                 </div>
                 <slot name="navigation">
-                    <Navigation menuItems={menuItems} />
+                    <Navigation menuItems={menuItems} class="min-h-0" />
                 </slot>
             </div>
             <footer>

@@ -1,3 +1,4 @@
-- [ ] flesh out index
-- [ ] add guestbook
-- [ ] write posts
+- [ ] Flesh out home
+- [ ] Add guestbook
+- [ ] Write posts
+- [ ] Refactor stuff
