@@ -1,0 +1,22 @@
+---
+// components
+import { Image } from "astro:assets";
+
+// images
+import offlineVersion from "../../images/badges/ver-offline.gif";
+
+interface Props extends Badge {}
+
+const {
+    image = offlineVersion,
+    alt = "Badge that has a classic Windows compressed file icon and says 'Offline Version'.",
+    title = "Click to download this site",
+    href = "https://github.com/autotoxin/autotoxin.indieweb.tld",
+    class: className,
+    tooltipPlacement = "top",
+} = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" title={title} data-tooltip-placement={tooltipPlacement}>
+    <Image src={image} alt={alt} class={className} />
+</a>

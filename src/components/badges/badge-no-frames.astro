@@ -1,0 +1,19 @@
+---
+// components
+import { Image } from "astro:assets";
+
+// images
+import noFrames from "../../images/badges/noframes5.gif";
+
+interface Props extends Badge {}
+
+const {
+    image = noFrames,
+    alt = "Badge that says 'This page is Frames Free' with a picture of a grid to the right of the text, and a red cross through it.",
+    title = "It's true but I gotta say when I see people using frames for site sections it really takes me back and makes me happy!",
+    class: className,
+    tooltipPlacement = "top",
+} = Astro.props;
+---
+
+<Image src={image} alt={alt} title={title} class={className} data-tooltip-placement={tooltipPlacement} />

@@ -1,118 +1,131 @@
 /* Credit to https://pixelcorners.lukeb.co.uk/ */
+@utility rounded-pixelated-2 {
+    clip-path: polygon(
+        0px calc(100% - 3px),
+        3px calc(100% - 3px),
+        3px 100%,
+        calc(100% - 3px) 100%,
+        calc(100% - 3px) calc(100% - 3px),
+        100% calc(100% - 3px),
+        100% 3px,
+        calc(100% - 3px) 3px,
+        calc(100% - 3px) 0px,
+        3px 0px,
+        3px 3px,
+        0px 3px
+    );
+}
+
+@utility rounded-pixelated-4 {
+    clip-path: polygon(
+        0px calc(100% - 6px),
+        3px calc(100% - 6px),
+        3px calc(100% - 3px),
+        6px calc(100% - 3px),
+        6px 100%,
+        calc(100% - 6px) 100%,
+        calc(100% - 6px) calc(100% - 3px),
+        calc(100% - 3px) calc(100% - 3px),
+        calc(100% - 3px) calc(100% - 6px),
+        100% calc(100% - 6px),
+        100% 6px,
+        calc(100% - 3px) 6px,
+        calc(100% - 3px) 3px,
+        calc(100% - 6px) 3px,
+        calc(100% - 6px) 0px,
+        6px 0px,
+        6px 3px,
+        3px 3px,
+        3px 6px,
+        0px 6px
+    );
+}
+
+@utility rounded-pixelated-6 {
+    clip-path: polygon(
+        0px calc(100% - 12px),
+        3px calc(100% - 12px),
+        3px calc(100% - 6px),
+        6px calc(100% - 6px),
+        6px calc(100% - 3px),
+        12px calc(100% - 3px),
+        12px 100%,
+        calc(100% - 12px) 100%,
+        calc(100% - 12px) calc(100% - 3px),
+        calc(100% - 6px) calc(100% - 3px),
+        calc(100% - 6px) calc(100% - 6px),
+        calc(100% - 3px) calc(100% - 6px),
+        calc(100% - 3px) calc(100% - 12px),
+        100% calc(100% - 12px),
+        100% 12px,
+        calc(100% - 3px) 12px,
+        calc(100% - 3px) 6px,
+        calc(100% - 6px) 6px,
+        calc(100% - 6px) 3px,
+        calc(100% - 12px) 3px,
+        calc(100% - 12px) 0px,
+        12px 0px,
+        12px 3px,
+        6px 3px,
+        6px 6px,
+        3px 6px,
+        3px 12px,
+        0px 12px
+    );
+}
+
+@utility rounded-pixelated-8 {
+    clip-path: polygon(
+        0px calc(100% - 15px),
+        3px calc(100% - 15px),
+        3px calc(100% - 9px),
+        6px calc(100% - 9px),
+        6px calc(100% - 6px),
+        9px calc(100% - 6px),
+        9px calc(100% - 3px),
+        15px calc(100% - 3px),
+        15px 100%,
+        calc(100% - 15px) 100%,
+        calc(100% - 15px) calc(100% - 3px),
+        calc(100% - 9px) calc(100% - 3px),
+        calc(100% - 9px) calc(100% - 6px),
+        calc(100% - 6px) calc(100% - 6px),
+        calc(100% - 6px) calc(100% - 9px),
+        calc(100% - 3px) calc(100% - 9px),
+        calc(100% - 3px) calc(100% - 15px),
+        100% calc(100% - 15px),
+        100% 15px,
+        calc(100% - 3px) 15px,
+        calc(100% - 3px) 9px,
+        calc(100% - 6px) 9px,
+        calc(100% - 6px) 6px,
+        calc(100% - 9px) 6px,
+        calc(100% - 9px) 3px,
+        calc(100% - 15px) 3px,
+        calc(100% - 15px) 0px,
+        15px 0px,
+        15px 3px,
+        9px 3px,
+        9px 6px,
+        6px 6px,
+        6px 9px,
+        3px 9px,
+        3px 15px,
+        0px 15px
+    );
+}
+
 @layer components {
     .rounded-pixelated-2 {
-        clip-path: polygon(
-            0px calc(100% - 3px),
-            3px calc(100% - 3px),
-            3px 100%,
-            calc(100% - 3px) 100%,
-            calc(100% - 3px) calc(100% - 3px),
-            100% calc(100% - 3px),
-            100% 3px,
-            calc(100% - 3px) 3px,
-            calc(100% - 3px) 0px,
-            3px 0px,
-            3px 3px,
-            0px 3px
-        );
+        @apply rounded-pixelated-2;
     }
-
     .rounded-pixelated-4 {
-        clip-path: polygon(
-            0px calc(100% - 6px),
-            3px calc(100% - 6px),
-            3px calc(100% - 3px),
-            6px calc(100% - 3px),
-            6px 100%,
-            calc(100% - 6px) 100%,
-            calc(100% - 6px) calc(100% - 3px),
-            calc(100% - 3px) calc(100% - 3px),
-            calc(100% - 3px) calc(100% - 6px),
-            100% calc(100% - 6px),
-            100% 6px,
-            calc(100% - 3px) 6px,
-            calc(100% - 3px) 3px,
-            calc(100% - 6px) 3px,
-            calc(100% - 6px) 0px,
-            6px 0px,
-            6px 3px,
-            3px 3px,
-            3px 6px,
-            0px 6px
-        );
+        @apply rounded-pixelated-4;
     }
-
     .rounded-pixelated-6 {
-        clip-path: polygon(
-            0px calc(100% - 12px),
-            3px calc(100% - 12px),
-            3px calc(100% - 6px),
-            6px calc(100% - 6px),
-            6px calc(100% - 3px),
-            12px calc(100% - 3px),
-            12px 100%,
-            calc(100% - 12px) 100%,
-            calc(100% - 12px) calc(100% - 3px),
-            calc(100% - 6px) calc(100% - 3px),
-            calc(100% - 6px) calc(100% - 6px),
-            calc(100% - 3px) calc(100% - 6px),
-            calc(100% - 3px) calc(100% - 12px),
-            100% calc(100% - 12px),
-            100% 12px,
-            calc(100% - 3px) 12px,
-            calc(100% - 3px) 6px,
-            calc(100% - 6px) 6px,
-            calc(100% - 6px) 3px,
-            calc(100% - 12px) 3px,
-            calc(100% - 12px) 0px,
-            12px 0px,
-            12px 3px,
-            6px 3px,
-            6px 6px,
-            3px 6px,
-            3px 12px,
-            0px 12px
-        );
+        @apply rounded-pixelated-6;
     }
-
     .rounded-pixelated-8 {
-        clip-path: polygon(
-            0px calc(100% - 15px),
-            3px calc(100% - 15px),
-            3px calc(100% - 9px),
-            6px calc(100% - 9px),
-            6px calc(100% - 6px),
-            9px calc(100% - 6px),
-            9px calc(100% - 3px),
-            15px calc(100% - 3px),
-            15px 100%,
-            calc(100% - 15px) 100%,
-            calc(100% - 15px) calc(100% - 3px),
-            calc(100% - 9px) calc(100% - 3px),
-            calc(100% - 9px) calc(100% - 6px),
-            calc(100% - 6px) calc(100% - 6px),
-            calc(100% - 6px) calc(100% - 9px),
-            calc(100% - 3px) calc(100% - 9px),
-            calc(100% - 3px) calc(100% - 15px),
-            100% calc(100% - 15px),
-            100% 15px,
-            calc(100% - 3px) 15px,
-            calc(100% - 3px) 9px,
-            calc(100% - 6px) 9px,
-            calc(100% - 6px) 6px,
-            calc(100% - 9px) 6px,
-            calc(100% - 9px) 3px,
-            calc(100% - 15px) 3px,
-            calc(100% - 15px) 0px,
-            15px 0px,
-            15px 3px,
-            9px 3px,
-            9px 6px,
-            6px 6px,
-            6px 9px,
-            3px 9px,
-            3px 15px,
-            0px 15px
-        );
+        @apply rounded-pixelated-8;
     }
 }

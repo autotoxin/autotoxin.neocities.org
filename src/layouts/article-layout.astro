@@ -1,0 +1,21 @@
+---
+// components
+import StandardLayout from "./standard-layout.astro";
+
+interface Props {
+    frontmatter: {
+        title?: string;
+        siteTitle?: string;
+        description?: string;
+    };
+    children: unknown;
+}
+
+const props = Astro.props;
+---
+
+<StandardLayout {...props}>
+    <article class="bg-background rounded-pixelated-8 min-h-0 grow p-5 overflow-auto overscroll-y-contain">
+        <slot />
+    </article>
+</StandardLayout>

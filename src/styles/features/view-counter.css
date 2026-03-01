@@ -1,0 +1,11 @@
+@reference "tailwindcss";
+@reference "../global.css";
+@reference "./rounded-pixelated.css";
+
+.view-counter {
+    @apply flex cursor-default flex-row items-center justify-center gap-0.5 text-3xl leading-none transition-opacity duration-500 select-none motion-safe:duration-1500;
+
+    span {
+        @apply rounded-pixelated-2 bg-background block px-0.5;
+    }
+}

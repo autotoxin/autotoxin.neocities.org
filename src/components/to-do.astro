@@ -1,16 +1,23 @@
 ---
+// styles
 import "../styles/features/to-do.css";
-import { Content } from "../content/todo.md";
+
+// content
+import { compiledContent } from "../content/todo.md";
+
+// utils
 import { cn } from "../utils/cn";
+import { markdownTasklistA11y } from "../utils/markdown-tasklist-a11y";
 
 interface Props {
     class?: string;
 }
 
 const { class: className } = Astro.props;
+const accessibleContent = markdownTasklistA11y(await compiledContent());
 ---
 
-<div class={cn("to-do flex flex-col justify-start gap-2", className)} role="marquee">
+<section class={cn("to-do flex flex-col justify-start gap-2", className)}>
     <h3 class="min-h-0 text-center text-xl leading-none">To-do</h3>
-    <div class="min-h-0 overflow-auto overscroll-y-contain"><Content /></div>
-</div>
+    <div id="to-do-content" class="min-h-0 overflow-auto overscroll-y-contain" set:html={accessibleContent} />
+</section>

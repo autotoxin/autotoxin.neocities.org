@@ -1,0 +1,22 @@
+---
+// components
+import { Image } from "astro:assets";
+
+// images
+import wikipedia from "../../images/badges/wikipedia.gif";
+
+interface Props extends Badge {}
+
+const {
+    image = wikipedia,
+    alt = "Badge with the Wikipedia logo that says 'Support Wikipedia'",
+    title = "I'm dead serious you should donate to Wikipedia if you can afford to.",
+    href = "https://donate.wikimedia.org/",
+    class: className,
+    tooltipPlacement = "top",
+} = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" title={title} data-tooltip-placement={tooltipPlacement}>
+    <Image src={image} alt={alt} class={className} /></a
+>

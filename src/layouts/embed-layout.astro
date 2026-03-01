@@ -1,0 +1,42 @@
+---
+/**
+ * This layout is intended for embedding content in an iframe (e.g. a guestbook)
+ */
+
+// components
+import Badges from "../components/badges.astro";
+import BadgeAstro from "../components/badges/badge-astro.astro";
+import BadgeAtabook from "../components/badges/badge-atabook.astro";
+import BadgeLicense from "../components/badges/badge-license.astro";
+import BadgeMadeWithMacos from "../components/badges/badge-made-with-macos.astro";
+import BadgeOfflineVersion from "../components/badges/badge-offline-version.astro";
+import BadgeResolution from "../components/badges/badge-resolution.astro";
+import BadgeValidHtml from "../components/badges/badge-valid-html.astro";
+import StandardLayout from "./standard-layout.astro";
+
+interface Props {
+    frontmatter: {
+        title?: string;
+        siteTitle?: string;
+        description?: string;
+    };
+    children: unknown;
+}
+
+const props = Astro.props;
+---
+
+<StandardLayout {...props}>
+    <article class="bg-background rounded-pixelated-8 min-h-0 grow overflow-auto overscroll-y-contain p-5 relative">
+        <slot />
+    </article>
+    <Badges slot="footer">
+        <BadgeResolution />
+        <BadgeAstro />
+        <BadgeValidHtml />
+        <BadgeOfflineVersion />
+        <BadgeMadeWithMacos />
+        <BadgeLicense />
+        <BadgeAtabook />
+    </Badges>
+</StandardLayout>

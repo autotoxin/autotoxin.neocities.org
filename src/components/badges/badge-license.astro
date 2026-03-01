@@ -1,0 +1,22 @@
+---
+// components
+import { Image } from "astro:assets";
+
+// images
+import iscLicense from "../../images/badges/isc_license.gif";
+
+interface Props extends Badge {}
+
+const {
+    image = iscLicense,
+    alt = "Badge that says 'ISC License' with the logo of the ISC license on the left.",
+    title = "This site is licensed under the ISC License, click to read the license.",
+    href = "/LICENSE.txt",
+    class: className,
+    tooltipPlacement = "top",
+} = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" title={title} data-tooltip-placement={tooltipPlacement}>
+    <Image src={image} alt={alt} class={className} /></a
+>

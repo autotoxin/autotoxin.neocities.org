@@ -1,0 +1,19 @@
+---
+// components
+import { Image } from "astro:assets";
+
+// images
+import best800x600 from "../../images/badges/best800x600.gif";
+
+interface Props extends Badge {}
+
+const {
+    image = best800x600,
+    alt = "Badge that says '800×600 best', or maybe it says '800 × best 600', it's a bit hard to tell. It also has the word 'PIXEL' in all-caps written vertically on the left-hand side. To the right there's a cross with arros at the end that is animated to expand each loop",
+    title = "Sorry for anyone with smaller screens I'll get around to responsiveness one day",
+    class: className,
+    tooltipPlacement = "top",
+} = Astro.props;
+---
+
+<Image src={image} alt={alt} title={title} class={className} data-tooltip-placement={tooltipPlacement} />

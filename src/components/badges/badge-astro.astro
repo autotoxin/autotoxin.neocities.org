@@ -1,0 +1,22 @@
+---
+// components
+import { Image } from "astro:assets";
+
+// images
+import madeWithAstro from "../../images/badges/made_with_astro.gif";
+
+interface Props extends Badge {}
+
+const {
+    image = madeWithAstro,
+    alt = "Badge with the Astro logo that says 'Made with Astro'",
+    title = "I thought it'd be fun to make an indieweb site with new technologies!",
+    href = "https://astro.build/",
+    class: className,
+    tooltipPlacement = "top",
+} = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" title={title} data-tooltip-placement={tooltipPlacement}>
+    <Image src={image} alt={alt} class={className} /></a
+>

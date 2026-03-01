@@ -1,4 +1,7 @@
+- **v0.1.6** Actually go live
+- **v0.1.5** Add guest book
+- **v0.1.4** Add visitor counter
 - **v0.1.3** Change favicon
-- **v0.1.2** Add to-do and put site live
+- **v0.1.2** Add to-do ~~and put site live~~
 - **v0.1.1** Refactoring and initial content
 - **v0.1.0** Initial setup and rough design

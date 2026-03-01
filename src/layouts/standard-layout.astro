@@ -8,6 +8,7 @@ import Badges from "../components/badges.astro";
 import SiteLogo from "../components/site-logo.astro";
 import Navigation from "../components/navigation.astro";
 import { Tooltips } from "astro-tooltips";
+import ViewCounter from "../components/view-counter.astro";
 
 interface Props {
     frontmatter: {
@@ -30,7 +31,7 @@ const menuItems = [
         label: "Blog",
         href: "/blog",
         isDisabled: true,
-        title: "Blog is coming soon!",
+        title: "Blog is coming soon??",
     },
     {
         label: "Accessibility",
@@ -43,6 +44,11 @@ const menuItems = [
         href: "/copy",
         isDisabled: true,
         title: "Instructions coming soon!",
+    },
+    {
+        label: "Guest book",
+        href: "/guestbook",
+        isActive: Astro.url.pathname === "/guestbook",
     },
     {
         label: "Credits",
@@ -69,7 +75,7 @@ const menuItems = [
         <Tooltips interactive={false} delay={[150, 150]} />
     </head>
     <body>
-        <div class="background"></div>
+        <div class="background" aria-hidden="true"></div>
         <main class="fixed flex w-full flex-col gap-4">
             <header class="grid grid-cols-4 gap-4">
                 <slot name="header">
@@ -77,12 +83,17 @@ const menuItems = [
                 </slot>
             </header>
             <div class="grid flex-1 grid-cols-4 gap-4">
-                <div class="col-span-3 flex min-h-0 flex-col justify-start gap-4">
+                <div class="col-span-3 flex min-h-0 flex-col justify-start gap-4" aria-label="Main content">
                     <slot />
                 </div>
-                <slot name="navigation">
-                    <Navigation menuItems={menuItems} class="min-h-0" />
-                </slot>
+                <div class="flex min-h-0 flex-col gap-4">
+                    <slot name="navigation">
+                        <Navigation menuItems={menuItems} class="min-h-0" />
+                    </slot>
+                    <footer>
+                        <ViewCounter />
+                    </footer>
+                </div>
             </div>
             <footer>
                 <slot name="footer">

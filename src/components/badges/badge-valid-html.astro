@@ -1,0 +1,38 @@
+---
+// components
+import { Image } from "astro:assets";
+
+// images
+import validXHTML from "../../images/badges/valid-xhtml10.gif";
+import validHTML5 from "../../images/badges/valid-html5.gif";
+
+// utils
+import { cn } from "../../utils/cn";
+
+interface Props extends Badge {}
+
+const {
+    image = validXHTML,
+    altImage = validHTML5,
+    alt = "Badge that says XHTML 1.0 and has the W3C logo to the left and a checkmark to the right. It's intended to communicate that this site has valid XHTML. This is a lie, and when the user hovers over this image it is replaced by the next image.",
+    altAlt = "Badge that says HTML 5 and has the W3C logo to the left and a checkmark to the right. It's intended to communicate that this site has valid HTML 5. It's only a half-lie: the HTML is valid but the CSS isn't, because the W3C validator still doesn't understand @layer rules.",
+    class: className,
+    altClass,
+    altTitle = "Just kidding! Also the W3C validator thinks @layer isn't valid CSS (it is), so this badge is a lie.",
+    tooltipPlacement = "top",
+} = Astro.props;
+---
+
+<div class="group relative">
+    <Image src={image} alt={alt} class={className} />
+    <Image
+        src={altImage}
+        alt={altAlt}
+        class={cn(
+            "absolute top-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 motion-reduce:duration-1500",
+            altClass
+        )}
+        title={altTitle}
+        data-tooltip-placement={tooltipPlacement}
+    />
+</div>

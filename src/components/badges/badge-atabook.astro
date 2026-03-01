@@ -1,0 +1,22 @@
+---
+// components
+import { Image } from "astro:assets";
+
+// images
+import ataBook from "../../images/badges/atabook.gif";
+
+interface Props extends Badge {}
+
+const {
+    image = ataBook,
+    alt = 'Badge representing Atabook. It has a blue-haired anime girl on the left and the text "新book" on the right.',
+    title = "Guest book powered by Atabook",
+    href = "https://atabook.org/",
+    class: className,
+    tooltipPlacement = "top",
+} = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" title={title} data-tooltip-placement={tooltipPlacement}>
+    <Image src={image} alt={alt} class={className} /></a
+>

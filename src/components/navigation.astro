@@ -1,4 +1,5 @@
 ---
+// components
 import NavItem, { type NavItem as NavItemType } from "./nav-item.astro";
 
 interface Props {
@@ -10,8 +11,8 @@ const { class: className, menuItems = [] } = Astro.props;
 ---
 
 <nav class={`bg-background rounded-pixelated-6 flex grow flex-col justify-start p-5 ${className}`}>
-    <header class="cursor-default text-xl select-none text-center">Navigation</header>
-    <ul class="side-menu">
+    <header class="cursor-default text-center text-xl select-none">Navigation</header>
+    <ul class="side-menu grow">
         {menuItems.map((item) => <NavItem item={item} />)}
     </ul>
 </nav>

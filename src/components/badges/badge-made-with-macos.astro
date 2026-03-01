@@ -1,0 +1,19 @@
+---
+// components
+import { Image } from "astro:assets";
+
+// images
+import madeWithMacOS from "../../images/badges/made_with_macos.gif";
+
+interface Props extends Badge {}
+
+const {
+    image = madeWithMacOS,
+    alt = "Badge that says 'Made with MacOS' and shows the MacOS logo on the left. The words fade in-and-out one by one.",
+    title = "...but I prefer working with Linux!",
+    class: className,
+    tooltipPlacement = "top",
+} = Astro.props;
+---
+
+<Image src={image} class={className} alt={alt} title={title} data-tooltip-placement={tooltipPlacement} />
