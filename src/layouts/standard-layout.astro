@@ -8,7 +8,10 @@ import Badges from "../components/badges.astro";
 import SiteLogo from "../components/site-logo.astro";
 import Navigation from "../components/navigation.astro";
 import { Tooltips } from "astro-tooltips";
-import ViewCounter from "../components/view-counter.astro";
+import ViewCounter from "../components/view-counter/view-counter.tsx";
+
+// utils
+import { v4 as uuidv4 } from "uuid";
 
 // images
 import opengraphImage from "../images/open-graph.png";
@@ -99,7 +102,7 @@ const canonicalUrl = `${Astro.site}${Astro.url.pathname.slice(1)}`;
                         <Navigation menuItems={menuItems} class="min-h-0" />
                     </slot>
                     <footer>
-                        <ViewCounter />
+                        <ViewCounter client:visible id={`vc-${uuidv4()}`} />
                     </footer>
                 </div>
             </div>

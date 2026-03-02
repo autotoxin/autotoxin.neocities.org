@@ -1,3 +1,4 @@
+- **v0.1.7** Implemented own view/visitor counter
 - **v0.1.6** Actually go live
 - **v0.1.5** Add guest book
 - **v0.1.4** Add visitor counter
