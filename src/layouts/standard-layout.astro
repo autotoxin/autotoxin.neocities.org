@@ -57,6 +57,8 @@ const menuItems = [
         title: "Credits coming soon!",
     },
 ];
+
+const canonicalUrl = `${Astro.site}${Astro.url.pathname.slice(1)}`;
 ---
 
 <html lang="en">
@@ -72,6 +74,7 @@ const menuItems = [
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content={siteTitle} />
         <link rel="manifest" href="/site.webmanifest" />
+        <link rel="canonical" href={canonicalUrl} />
         <Tooltips interactive={false} delay={[150, 150]} />
     </head>
     <body>

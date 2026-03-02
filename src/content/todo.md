@@ -1,6 +1,6 @@
-- [ ] Flesh out home
 - [x] Add guest book
 - [ ] Write posts
-- [ ] Test other devices
+- [ ] Test on devices
 - [ ] Fix up code
 - [ ] Join webring
+- [ ] Add neat features
