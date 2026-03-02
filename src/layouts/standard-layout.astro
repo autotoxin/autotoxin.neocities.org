@@ -10,6 +10,9 @@ import Navigation from "../components/navigation.astro";
 import { Tooltips } from "astro-tooltips";
 import ViewCounter from "../components/view-counter.astro";
 
+// images
+import opengraphImage from "../images/open-graph.png";
+
 interface Props {
     frontmatter: {
         title?: string;
@@ -73,6 +76,8 @@ const canonicalUrl = `${Astro.site}${Astro.url.pathname.slice(1)}`;
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content={siteTitle} />
+        <meta property="og:image" content={opengraphImage.src} />
+        <meta property="og:image:alt" content="Screenshot of the home page" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="canonical" href={canonicalUrl} />
         <Tooltips interactive={false} delay={[150, 150]} />
